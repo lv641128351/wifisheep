@@ -22,7 +22,7 @@ class back(threading.Thread):
 				x+=1
 				
 			nohup='{%s}'%nohup[:len(nohup)-1]
-			cmd_h=self.cmd("cat /var/lib/dhcp/dhcpd.leases|grep host|awk '{print$2}' ").replace('"','').split('\n')
+			cmd_h=self.cmd("cat /var/lib/dhcp/dhclient.eth0.leases|grep host|awk '{print$2}' ").replace('"','').split('\n')
 			x=0
 			dhcp=''
 			for i in cmd_h:
